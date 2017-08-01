@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<section message='message'  id="profilePage" class="profilePage row">
+  <section class="profileInformation col-md-4">
+      <h1>THe profile header</h1>
+  </section>
+  <section class="photoAlbum col-md-8">
+    <h1>photoalbum</h1>
+    {{$ctrl.message}}{{ $ctrl.int}}
+      <button ng-click="$ctrl.logConsole()"></button>
+    <div class="table" ng-repeat="photo in $ctrl.photos" >
+      {{photo}}
+      <img class="image" src="https://pbs.twimg.com/profile_images/378800000831249044/effb57c08b2f5783c686b589d84d2b92.jpeg" alt="Piggies">
+    </div>
+  </section>
+</section>
