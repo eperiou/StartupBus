@@ -3,22 +3,21 @@ const angular = require('angular');
 
 const uiRouter = require('angular-ui-router');
 
-import routes from './profile.routes';
+import routes from './projectsDashboard.routes';
 
-
-export class ProfileComponent {
+export class ProjectsDashboardComponent {
   /*@ngInject*/
   $http;
   photos;
   message;
   int;
-
   constructor($http) {
     this.$http = $http;
     this.message = 'Hello';
     this.int = 1
     this.photos = [1, 2, 3, 4, 5];
   }
+
   $onInit() {
     this.$http.get('http://localhost:3000/api/projects')
       .then((success)=>console.log(success,'success'))
@@ -26,10 +25,11 @@ export class ProfileComponent {
   }
 }
 
-export default angular.module('startupBusApp.profile', [uiRouter])
+export default angular.module('startupBusApp.projectsDashboard', [uiRouter])
   .config(routes)
-  .component('profile', {
-    template: require('./profile.html'),
-    controller: ProfileComponent,
+  .component('projectsDashboard', {
+    template: require('./projectsDashboard.html'),
+    controller: ProjectsDashboardComponent,
+    // controllerAs: 'projectsDashboardCtrl'
   })
   .name;
